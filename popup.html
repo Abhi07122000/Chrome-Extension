@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>MYM Weather-Extension</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="outer">
+    <h1>MYM Weather App <img src="./icons/temperature.png" height="30px"></img></h1>
+
+    <div id="details">
+      <h2 id="msg"></h2>
+      <img id="icon"></img><br>
+      <b id="desc"></b>
+      <h1 id="temp"></h1>
+      <p id="maxt"></p>
+      <p id="mint"></p>
+      <p id="hum"></p>
+      <br>
+    </div>
+    <br>
+    <input type="text" placeholder="Enter the city" id="myInput">
+    <br><br>
+    <button type="button" id="button">Fetch the Weather</button>
+    <br><br>
+    <img src="./icons/location.png" height="30px"><button id="mybutton">Find My Weather</button> <img
+      src="./icons/location.png" height="30px">
+    <br><br>
+  </div>
+  <script type="module" src="firebase/firebase-app.js"></script>
+  <script type="module" src="firebase/firebase-firestore.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+
+</html>

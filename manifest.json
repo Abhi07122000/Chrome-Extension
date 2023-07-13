@@ -1,0 +1,27 @@
+{
+  "name": "MYM",
+  "description": "This is my first chrome extension",
+  "version": "0.1",
+  "manifest_version": 3,
+  "permissions": [
+    "geolocation",
+    "storage",
+    "tabs",
+    "background" 
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "firebase/firebase-app.js",
+        "firebase/firebase-firestore.js"
+      ],
+      "matches": ["<all_urls>"],
+      "type": "module"
+    }
+  ],
+  "action": {
+    "default_icon": "icons/temperature.png",
+    "default_popup": "popup.html",
+    "type": "module"
+  }
+}
