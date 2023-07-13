@@ -1,22 +1,22 @@
-//popup.js
-// Import the necessary Firebase modules
-import { initializeApp } from './firebase/firebase-app.js';
-import * as firebase from './firebase/firebase-firestore.js';
 
-// Initialize the Firebase app with your Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyBBuPUQaU9YUNtrfVcPdVAE3vtIU99O1_4",
-    authDomain: "mym-weather-api.firebaseapp.com",
-    projectId: "mym-weather-api",
-    storageBucket: "mym-weather-api.appspot.com",
-    messagingSenderId: "76561129168",
-    appId: "1:76561129168:web:19f0cb639a47ba1f4248d5",
-    measurementId: "G-PG793C5BWK"
-  };
+// Import the necessary Firebase modules
+// import { initializeApp } from './firebase/firebase-app.js';
+// import * as firebase from './firebase/firebase-firestore.js';
+
+// // Initialize the Firebase app with your Firebase configuration
+// const firebaseConfig = {
+//     apiKey: "AIzaSyBBuPUQaU9YUNtrfVcPdVAE3vtIU99O1_4",
+//     authDomain: "mym-weather-api.firebaseapp.com",
+//     projectId: "mym-weather-api",
+//     storageBucket: "mym-weather-api.appspot.com",
+//     messagingSenderId: "76561129168",
+//     appId: "1:76561129168:web:19f0cb639a47ba1f4248d5",
+//     measurementId: "G-PG793C5BWK"
+//   };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-const db = firebase.getFirestore(firebaseApp);
+// const firebaseApp = initializeApp(firebaseConfig);
+// const db = firebase.getFirestore(firebaseApp);
 
 var button = document.getElementById("button");
 var mybutton = document.getElementById("mybutton");
@@ -75,7 +75,7 @@ function storeWeatherData(data) {
         humidity: data.main.humidity,
         desc: data.weather[0]["main"],
     };
-    storeWeatherDataFirebase(weatherEntry)
+    // storeWeatherDataFirebase(weatherEntry)
     // Add the object to the object store
     const request = objectStore.add(weatherEntry);
     // Handle the success or error of the store operation
@@ -88,15 +88,15 @@ function storeWeatherData(data) {
 }
 
 // Function to store weather data in Firebase Firestore
-async function storeWeatherDataFirebase(data) {
-    try {
-      const weatherDataCollection = firebase.collection(db, 'weatherData');
-      await firebase.addDoc(weatherDataCollection, data);
-      console.log('Weather data stored successfully in Firebase Firestore');
-    } catch (error) {
-      console.error('Failed to store weather data in Firebase Firestore:', error);
-    }
-  }
+// async function storeWeatherDataFirebase(data) {
+//     try {
+//       const weatherDataCollection = firebase.collection(db, 'weatherData');
+//       await firebase.addDoc(weatherDataCollection, data);
+//       console.log('Weather data stored successfully in Firebase Firestore');
+//     } catch (error) {
+//       console.error('Failed to store weather data in Firebase Firestore:', error);
+//     }
+//   }
 
 // Function to retrieve weather data from IndexedDB and display it
 function retrieveWeatherData() {
@@ -141,21 +141,21 @@ function displayWeatherData(weatherData) {
 }
 
 
-function sendMessageToBackground(data) {
-    try {
-        chrome.runtime.sendMessage({
-            action: 'storeWeatherData',
-            data: data
-        }, (response) => {
-            if (chrome.runtime.lastError) {
-                throw new Error(chrome.runtime.lastError.message);
-            }
-            console.log('Data sent successfully:', response);
-        });
-    } catch (error) {
-        console.log('Error sending data:', error);
-    }
-}
+// function sendMessageToBackground(data) {
+//     try {
+//         chrome.runtime.sendMessage({
+//             action: 'storeWeatherData',
+//             data: data
+//         }, (response) => {
+//             if (chrome.runtime.lastError) {
+//                 throw new Error(chrome.runtime.lastError.message);
+//             }
+//             console.log('Data sent successfully:', response);
+//         });
+//     } catch (error) {
+//         console.log('Error sending data:', error);
+//     }
+// }
 
 
 function Positionweather(position) {
