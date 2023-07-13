@@ -24,3 +24,11 @@ This is a simple weather Chrome extension that allows users to fetch and display
 
 5. The extension should now be added to your Chrome browser.
 
+## Usage
+
+1. Click on the extension icon in the browser toolbar to open the weather popup window.
+2. Enter a city name in the input field and click "Fetch the Weather" to retrieve weather data for the specified city.
+3. Alternatively, click on the "Find My Weather" button to fetch weather data for your current location (requires geolocation permission).
+4. The weather data will be displayed, including the current temperature, maximum temperature, minimum temperature, humidity, and weather description.
+5. The fetched weather data will be stored in IndexedDB for offline access.
+6. Previously fetched weather data will be retrieved from IndexedDB and displayed upon opening the popup window.
